@@ -33,8 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +57,59 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Cons.cs" />
+    <Compile Include="DentalClinic.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DentalClinic.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddThuoc .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAddThuoc .Designer.cs">
+      <DependentUpon>FormAddThuoc .cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditThuoc.Designer.cs">
+      <DependentUpon>FormEditThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoDonThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoDonThuoc.Designer.cs">
+      <DependentUpon>FormTaoDonThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlQuanLyThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlQuanLyThuoc.Designer.cs">
+      <DependentUpon>UserControlQuanLyThuoc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAddThuoc .resx">
+      <DependentUpon>FormAddThuoc .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditThuoc.resx">
+      <DependentUpon>FormEditThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoDonThuoc.resx">
+      <DependentUpon>FormTaoDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +118,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlQuanLyThuoc.resx">
+      <DependentUpon>UserControlQuanLyThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DentalClinic.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DentalClinic.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DentalClinic.dbml.layout">
+      <DependentUpon>DentalClinic.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +144,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add File_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete File_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit File_26px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
